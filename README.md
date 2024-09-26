@@ -1,3 +1,6 @@
+## 기숙사 서포팅 서비스 도미티
+### 2024 BSSM 웹프로그래밍 수행평가 - 2108 이예흔
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
