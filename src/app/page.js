@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-8 bg-gray-50">
+    <div className="flex flex-col items-center justify-center min-h-screen p-8">
       {/* 헤더 */}
       <div className="flex flex-row items-center mb-4">
         <h1 className="text-5xl font-bold text-blue-500 mr-4">DOMITY</h1>
