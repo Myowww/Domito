@@ -25,9 +25,16 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-white w-100%">
-        <Image src={logo} alt="DOMITY" width={150} className="mb-4" />
-        <p className="text-gray-600 mb-6">로그인 후 도미티의 모든 서비스를 사용해 보세요!</p>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-white">
+    <div className="relative w-36 h-12 mb-4">
+      <Image 
+        src={logo} 
+        alt="DOMITY" 
+        layout="fill" 
+        objectFit="contain" 
+      />
+    </div>
+    <p className="text-gray-600 mb-6 text-center">로그인 후 도미티의 모든 서비스를 사용해 보세요!</p>
 
       <form onSubmit={handleLogin} className="flex flex-col w-80 items-center justify-center">
         <input
