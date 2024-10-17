@@ -1,15 +1,39 @@
+"use client"; // 클라이언트 컴포넌트로 설정
+
 import './globals.css';
 import Image from "next/image"
 import hanni from "../public/image.png";
+import { useState } from 'react'; // useState 훅 임포트
+import { useRouter } from 'next/navigation'; // useRouter 훅 임포트
 
 export default function Home() {
+  const [isLoggedIn, setIsLoggedIn] = useState(true); // 초기 상태 설정
+  const router = useRouter(); // useRouter 훅 사용
+
+  const handleClick = () => {
+    if (isLoggedIn) {
+      alert('로그인이 필요합니다'); // 상태 변경 전에 alert 띄우기
+      setIsLoggedIn(false); // 클릭 시 상태 변경
+    } else {
+      router.push('/login'); // 로그인 페이지로 이동
+    }
+  };
+
   return (
     <div className="flex flex-col items-left min-h-screen px-80 py-10">
 
       {/* 헤더 */}
       <div className="flex justify-between items-end mb-8 w-full h-fit"> 
         <h1 className="text-2xl font-bold text-blue-500 mr-4">DOMITY</h1>
-        <div className='text-black'><span className='text-blue-500 font-bold'>팜하니</span> 님 반가워요!</div>
+        <div className='text-black' onClick={handleClick}>
+          {isLoggedIn ? (
+            <>
+              <span className='text-blue-500 font-bold'>팜하니</span> 님 반가워요! {/* 로그인 상태일 때 */}
+            </>
+          ) : (
+            <span className='text-black cursor-pointer'>로그인이 필요합니다</span> // 클릭 가능하게 스타일 추가
+          )}
+        </div>
       </div>
 
       {/* 사용자 정보 및 랭킹 카드 배치 */}
@@ -22,7 +46,12 @@ export default function Home() {
             <div className="flex items-center mb-4">
 
               <div className="w-24 h-24 rounded-full bg-gray-300 overflow-hidden relative">
-                <Image src={hanni} alt='hanni' layout="fill" objectFit="cover" /> 
+                <Image 
+                  src={hanni} 
+                  alt='hanni' 
+                  fill // fill 속성으로 변경
+                  style={{ objectFit: 'cover' }} // objectFit을 style로 설정
+                />
               </div>
 
               <div className="ml-8">
