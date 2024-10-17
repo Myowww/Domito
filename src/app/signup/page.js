@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation'; // useRouter 훅 임포트
 import logo from '../../public/logo.png'; // 로고 이미지 경로
 
-export default function LoginPage() {
+export default function SignupPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter(); // useRouter 훅 사용
@@ -18,6 +18,10 @@ export default function LoginPage() {
     } else {
       alert('회원가입 실패'); // 회원가입 실패 시 알림
     }
+  };
+
+  const handleLoginRedirect = () => {
+    router.push('/login'); // 로그인 페이지로 이동
   };
 
   return (
@@ -48,7 +52,10 @@ export default function LoginPage() {
       </form>
       
       <p className="mt-4">
-        이미 계정이 있다면? <a href="/login" className="text-blue-500">로그인하기</a>
+        이미 계정이 있다면? 
+        <button onClick={handleLoginRedirect} className="text-blue-500 underline">
+          로그인하기
+        </button>
       </p>
     </div>
   );

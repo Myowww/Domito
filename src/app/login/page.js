@@ -21,11 +21,21 @@ export default function LoginPage() {
     }
   };
 
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-white w-100%">
-        <Image src={logo} alt="DOMITY" width={150} className="mb-4" />
-        <p className="text-gray-600 mb-6">로그인 후 도미티의 모든 서비스를 사용해 보세요!</p>
+  const handleSignupRedirect = () => {
+    router.push('/signup'); // 회원가입 페이지로 이동
+  };
 
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-white">
+      <div className="relative w-36 h-12 mb-4">
+        <Image 
+          src={logo} 
+          alt="DOMITY" 
+          layout="fill" 
+          objectFit="contain" 
+        />
+      </div>
+      <p className="text-gray-600 mb-6 text-center">로그인 후 도미티의 모든 서비스를 사용해 보세요!</p>
       <form onSubmit={handleLogin} className="flex flex-col w-80 items-center justify-center">
         <input
           type="text"
@@ -47,9 +57,11 @@ export default function LoginPage() {
           로그인
         </button>
       </form>
-      
-      <p className="mt-4">
-        만약 계정이 없다면? <a href="/signup" className="text-blue-500">회원가입하기</a>
+      <p className="mt-4 text-center">
+        만약 계정이 없다면? 
+        <button onClick={handleSignupRedirect} className="text-blue-500 underline">
+          회원가입하기
+        </button>
       </p>
     </div>
   );
