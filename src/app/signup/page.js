@@ -34,7 +34,7 @@ export default function SignupPage() {
         objectFit="contain" 
       />
     </div>
-    <p className="text-gray-600 mb-6 text-center">로그인 후 도미티의 모든 서비스를 사용해 보세요!</p>
+    <p className="text-gray-600 mb-6 text-center">회원가입 후 도미티의 모든 서비스를 사용해 보세요!</p>
 
       <form onSubmit={handleLogin} className="flex flex-col w-80 items-center justify-center">
         <input

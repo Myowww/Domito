@@ -12,7 +12,7 @@ export default function Home() {
 
   const handleClick = () => {
     if (isLoggedIn) {
-      alert('로그인이 필요합니다'); // 상태 변경 전에 alert 띄우기
+      alert('로그아웃 되었습니다. '); // 상태 변경 전에 alert 띄우기
       setIsLoggedIn(false); // 클릭 시 상태 변경
     } else {
       router.push('/login'); // 로그인 페이지로 이동
